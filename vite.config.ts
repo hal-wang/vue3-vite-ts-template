@@ -1,0 +1,64 @@
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path';
+import WindiCSS from 'vite-plugin-windicss';
+import PurgeIcons from 'vite-plugin-purge-icons';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import path from 'path';
+
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
+}
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    WindiCSS(),
+    PurgeIcons(),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      symbolId: 'icon-[dir]-[name]',
+      svgoOptions: true,
+    }),
+  ],
+  resolve: {
+    alias: [
+      {
+        find: /\/@\//,
+        replacement: pathResolve('src') + '/',
+      },
+      {
+        find: /\/#\//,
+        replacement: pathResolve('types') + '/',
+      },
+    ],
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {
+          'primary-color': '#1e80ff', //  Primary color
+          'success-color': '#55D187', //  Success color
+          'error-color': '#ED6F6F', //  False color
+          'warning-color': '#EFBD47', //   Warning color
+          'font-size-base': '14px', //  Main font size
+          'border-radius-base': '2px', //  Component/float fillet
+          'app-content-background': '#fafafa', //   Link color
+        },
+        javascriptEnabled: true,
+      },
+    },
+  },
+  build: {
+    sourcemap: true,
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://hal.wang',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
+});
