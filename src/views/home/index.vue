@@ -19,7 +19,7 @@
 <script lang="ts" setup>
   import { computed } from 'vue';
   import { useRouter } from 'vue-router';
-  import Icon from '/@/components/Icon/index.vue';
+  import Icon from '/@/components/Icon';
   import { useAppStore } from '/@/store/modules/app';
 
   const appStore = useAppStore();
