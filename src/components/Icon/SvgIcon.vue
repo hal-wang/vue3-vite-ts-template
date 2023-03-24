@@ -1,5 +1,10 @@
 <template>
-  <svg :class="[$attrs.class, spin && 'svg-icon-spin']" :style="getStyle" aria-hidden="true">
+  <svg
+    :class="[$attrs.class, spin && 'svg-icon-spin']"
+    :style="getStyle"
+    :fill="color"
+    aria-hidden="true"
+  >
     <use :xlink:href="symbolId" />
   </svg>
 </template>
@@ -26,6 +31,10 @@
         type: Boolean,
         default: false,
       },
+      color: {
+        type: String,
+        default: '',
+      },
     },
     setup(props) {
       const symbolId = computed(() => `#${props.prefix}-${props.name}`);
@@ -50,7 +59,7 @@
     display: inline-block;
     overflow: hidden;
     vertical-align: -0.15em;
-    fill: currentColor;
+    fill: currentcolor;
   }
 
   .svg-icon-spin {

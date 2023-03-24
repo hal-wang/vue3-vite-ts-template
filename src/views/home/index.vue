@@ -11,8 +11,8 @@
       To Second Page
     </button>
 
-    <Icon icon="lavcode|svg" color="black" size="60" />
-    <Icon icon="ant-design:aliyun-outlined" size="60" />
+    <Icon icon="lavcode|svg" size="60" />
+    <Icon icon="ant-design:aliyun-outlined" size="60" color="red" />
   </div>
 </template>
 
