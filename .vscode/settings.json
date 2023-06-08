@@ -89,4 +89,11 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".env": ".env.*",
+    "package.json": "yarn.lock,.gitattributes,.gitignore,CNAME,README*,.browserslistrc,pnpm-lock.yaml",
+    ".eslintrc.js": ".eslintignore,.prettierignore,prettier.config.js,stylelint.config.js,windi.config.ts,.commitlintrc.js"
+  },
 }
