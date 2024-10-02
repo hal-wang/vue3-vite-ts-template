@@ -1,12 +1,12 @@
 import { ConfigEnv, loadEnv, UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { resolve } from 'path';
-import WindiCSS from 'vite-plugin-windicss';
+import { resolve } from 'path'; 
 import PurgeIcons from 'vite-plugin-purge-icons';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
 import { createProxy } from '/@/build/proxy';
 import { wrapperEnv } from '/@/build/env';
+import UnoCSS from 'unocss/vite'
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
@@ -31,7 +31,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     root,
     plugins: [
       vue(),
-      WindiCSS(),
+      UnoCSS(),
       PurgeIcons(),
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],

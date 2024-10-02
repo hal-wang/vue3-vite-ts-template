@@ -55,10 +55,10 @@
     "/@/": "${workspaceRoot}/src"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,

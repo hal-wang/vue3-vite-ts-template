@@ -4,7 +4,7 @@ import { setupRouter } from '/@/router';
 import { setupStore } from '/@/store';
 
 import '/@/design/index.less';
-import 'virtual:windi.css';
+import 'virtual:uno.css'
 import 'virtual:svg-icons-register';
 
 const app = createApp(App);
