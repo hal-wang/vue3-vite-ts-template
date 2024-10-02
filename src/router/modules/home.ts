@@ -1,20 +1,20 @@
-import { RouteRecordRaw } from 'vue-router';
+import { RouteRecordRaw } from "vue-router";
 
 const home: RouteRecordRaw[] = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('/@/views/home/index.vue'),
+    path: "/",
+    name: "Home",
+    component: () => import("../../views/home/HomePage.vue"),
     meta: {
-      title: '主页',
+      title: "主页",
     },
   },
   {
-    path: '/second',
-    name: 'SecondPage',
-    component: () => import('/@/views/home/SecondPage.vue'),
+    path: "/second",
+    name: "SecondPage",
+    component: () => import("/@/views/home/SecondPage.vue"),
     meta: {
-      title: '第二个页面',
+      title: "第二个页面",
     },
   },
 ];

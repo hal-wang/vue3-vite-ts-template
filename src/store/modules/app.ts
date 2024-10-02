@@ -1,11 +1,11 @@
-import { defineStore } from 'pinia';
-import { store } from '/@/store';
+import { defineStore } from "pinia";
+import { store } from "/@/store";
 
 interface AppState {
   count: number;
 }
 export const useAppStore = defineStore({
-  id: 'app',
+  id: "app",
   state: (): AppState => ({
     count: 0,
   }),

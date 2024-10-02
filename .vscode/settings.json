@@ -54,16 +54,47 @@
   "path-intellisense.mappings": {
     "/@/": "${workspaceRoot}/src"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true
+  },
   "[vue]": {
+    "editor.formatOnSave": true, // 交给 eslint
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "sass",
+    "vue"
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     ".env": ".env.*",
-    "package.json": "yarn.lock,.gitignore,README*"
+    "package.json": "pnpm-lock.yaml,.gitignore,README*",
+    "eslint.config.*": "uno.config.*,.commitlintrc.*,postcss.config.*,.stylelint*,prettier.*"
   },
 }

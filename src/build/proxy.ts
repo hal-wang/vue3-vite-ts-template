@@ -1,4 +1,4 @@
-import type { ProxyOptions } from 'vite';
+import type { ProxyOptions } from "vite";
 
 type ProxyItem = [string, string];
 type ProxyList = ProxyItem[];
@@ -13,7 +13,7 @@ export function createProxy(list: ProxyList = []) {
       target: target,
       changeOrigin: true,
       ws: true,
-      rewrite: (path) => path.replace(new RegExp(`^${prefix}`), ''),
+      rewrite: (path) => path.replace(new RegExp(`^${prefix}`), ""),
       ...(isHttps ? { secure: false } : {}),
     };
   }

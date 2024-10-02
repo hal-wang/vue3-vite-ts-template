@@ -9,60 +9,59 @@
   </svg>
 </template>
 <script lang="ts">
-  import type { CSSProperties } from 'vue';
-  import { defineComponent, computed } from 'vue';
+import type { CSSProperties } from "vue";
+import { defineComponent, computed } from "vue";
 
-  export default defineComponent({
-    name: 'SvgIcon',
-    props: {
-      prefix: {
-        type: String,
-        default: 'icon',
-      },
-      name: {
-        type: String,
-        required: true,
-      },
-      size: {
-        type: [Number, String],
-        default: 16,
-      },
-      spin: {
-        type: Boolean,
-        default: false,
-      },
-      color: {
-        type: String,
-        default: '',
-      },
+export default defineComponent({
+  name: "SvgIcon",
+  props: {
+    prefix: {
+      type: String,
+      default: "icon",
     },
-    setup(props) {
-      const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+    name: {
+      type: String,
+      required: true,
+    },
+    size: {
+      type: [Number, String],
+      default: 16,
+    },
+    spin: {
+      type: Boolean,
+      default: false,
+    },
+    color: {
+      type: String,
+      default: "",
+    },
+  },
+  setup(props) {
+    const symbolId = computed(() => `#${props.prefix}-${props.name}`);
 
-      const getStyle = computed((): CSSProperties => {
-        const { size } = props;
-        let s = `${size}`;
-        s = `${s.replace('px', '')}px`;
-        return {
-          width: s,
-          height: s,
-        };
-      });
-      return { symbolId, getStyle };
-    },
-  });
+    const getStyle = computed((): CSSProperties => {
+      const { size } = props;
+      let s = `${size}`;
+      s = `${s.replace("px", "")}px`;
+      return {
+        width: s,
+        height: s,
+      };
+    });
+    return { symbolId, getStyle };
+  },
+});
 </script>
+
 <style lang="less" scoped>
-  @prefix-cls: ~'svg-icon';
+.svg-icon {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: -0.15em;
+  fill: currentcolor;
+}
 
-  .@{prefix-cls} {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: -0.15em;
-    fill: currentcolor;
-  }
-
-  .svg-icon-spin {
-    animation: loadingCircle 1s infinite linear;
-  }
+.svg-icon-spin {
+  animation: loadingCircle 1s infinite linear;
+}
 </style>
