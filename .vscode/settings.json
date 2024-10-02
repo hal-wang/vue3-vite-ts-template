@@ -94,7 +94,7 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     ".env": ".env.*",
-    "package.json": "pnpm-lock.yaml,.gitignore,README*",
+    "package.json": "pnpm-lock.yaml,.gitignore,README*,index.html,tsconfig.json",
     "eslint.config.*": "uno.config.*,.commitlintrc.*,postcss.config.*,.stylelint*,prettier.*"
   },
 }

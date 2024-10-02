@@ -2,13 +2,13 @@
   <div class="container p-4 flex flex-col items-start space-y-2">
     <span class="text-lg mx-1">{{ count }}</span>
     <button
-      class="bg-blue-300 px-2 py-1 round hover:bg-blue-500 rounded-md"
+      class="bg-blue-300 px-3 py-2 round hover:bg-blue-500 rounded-md border-0"
       @click="() => count++"
     >
       ClickMe
     </button>
     <button
-      class="bg-blue-300 px-2 py-1 round hover:bg-blue-500 rounded-md"
+      class="bg-blue-300 px-3 py-2 round hover:bg-blue-500 rounded-md border-0"
       @click="() => navToSecondPage()"
     >
       To Second Page
